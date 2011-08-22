@@ -1,0 +1,16 @@
+Build.PL
+Changes
+MANIFEST
+MANIFEST.SKIP
+SIGNATURE
+Makefile.PL
+README
+lib/Crypt/Affine.pm
+t/00-load.t
+t/01-new.t
+t/02-encrypt.t
+t/03-decrypt.t
+t/manifest.t
+t/pod.t
+META.yml
+SIGNATURE    Added here by Module::Build
