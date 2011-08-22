@@ -12,11 +12,11 @@ Crypt::Affine - Interface to the Affine cipher.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 DESCRIPTION
 
@@ -77,7 +77,7 @@ The constructor expects the following parameters as described below in the table
 
 =head2 encrypt()
 
-Encrypts the give string of alphabets ignoring any non-alphabets.
+Encrypts the given string of alphabets ignoring any non-alphabets.
 
     use strict; use warnings;
     use Crypt::Affine;
@@ -113,7 +113,7 @@ sub encrypt
 
 =head2 decrypt()
 
-Decrypts the give string of alphabets ignoring any non-alphabets.
+Decrypts the given string of alphabets ignoring any non-alphabets.
 
     use strict; use warnings;
     use Crypt::Affine;
