@@ -1,15 +1,19 @@
 Revision history for Crypt-Affine
 
-0.04  Sat Oct 25 21:50:25 2014
+0.05  2014-10-25T23:55:25+01:00
+      - Updated Changes file according to CPAN::Changes::Spec package.
+      - Added unit test changes.t file.
+
+0.04  2014-10-25T21:50:25+01:00
       - Restructured code using 'Moo'.
       - Added section 'Repository' to the pod document.
 
-0.03  Sat Oct 25 20:30:00 2014
+0.03  2014-10-25T20:30:00+01:00
       - Removed Build.PL file.
       - Tidied up MANIFEST file.
 
-0.02  Mon Aug 22 14:15:16 2011
+0.02  2011-08-22T14:15:16+01:00
       - Minor changes to pod.
 
-0.01  Mon Aug 22 11:22:00 2011
+0.01  2011-08-11T11:22:00+01:00
       - First version, released.

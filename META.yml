@@ -16,4 +16,4 @@ no_index:
     - inc
 resources:
   repository: https://github.com/Manwar/Crypt-Affine.git
-version: '0.04'
+version: '0.05'

@@ -1,6 +1,6 @@
 package Crypt::Affine;
 
-$Crypt::Affile::VERSION = '0.04';
+$Crypt::Affile::VERSION = '0.05';
 
 =head1 NAME
 
@@ -8,7 +8,7 @@ Crypt::Affine - Interface to the Affine cipher.
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 

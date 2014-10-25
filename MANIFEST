@@ -12,5 +12,6 @@ t/02-encrypt.t
 t/03-decrypt.t
 t/manifest.t
 t/pod.t
+t/changes.t
 META.yml                                 Module YAML meta-data (added by MakeMaker)
 META.json                                Module JSON meta-data (added by MakeMaker)
