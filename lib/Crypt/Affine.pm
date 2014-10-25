@@ -12,25 +12,25 @@ Crypt::Affine - Interface to the Affine cipher.
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 DESCRIPTION
 
-The affine cipher is a type of mono alphabetic substitution cipher,  wherein each letter in an 
-alphabet  is  mapped  to its numeric equivalent and then encrypted using a simple mathematical 
+The affine cipher is a type of mono alphabetic substitution cipher,  wherein each letter in an
+alphabet  is  mapped  to its numeric equivalent and then encrypted using a simple mathematical
 function. It inherits the weaknesses of all substitution ciphers.
-In the affine cipher the letters of an alphabet of size m are first mapped to the integers  in 
-the range 0..m-1. It then uses modular arithmetic to transform the integer that each plaintext 
+In the affine cipher the letters of an alphabet of size m are first mapped to the integers  in
+the range 0..m-1. It then uses modular arithmetic to transform the integer that each plaintext
 letter corresponds to into another integer that correspond to a ciphertext letter.The function
 for encryption of a single letter can be defined as below:
 
 E(x) = (mx + r) % l
 
-where 'l' is the size of the alphabet and 'm' & 'r' are the key of cipher. 
+where 'l' is the size of the alphabet and 'm' & 'r' are the key of cipher.
 The value 'm' must be choosen such that 'm' and 'l' are coprime.
 
 Similarly the function for decryption of a single letter can be defined as below:
@@ -58,19 +58,19 @@ has  'source'  => (is => 'ro', isa => 'FileName');
 The constructor expects the following parameters as described below in the table:
 
     +----------+----------+----------------------------------------------------------------+
-    | Key      | Required | Description                                                    | 
+    | Key      | Required | Description                                                    |
     +----------+----------+----------------------------------------------------------------+
     |  m       |    Yes   | Any positive number.                                           |
     |  r       |    Yes   | Any positive number.                                           |
-    |  reverse |    No    | 0 or 1, depending whether to use reverse set of alphabets.     | 
-    |          |          | Default is 0.                                                  | 
+    |  reverse |    No    | 0 or 1, depending whether to use reverse set of alphabets.     |
+    |          |          | Default is 0.                                                  |
     |  source  |    No    | Filename with complete path containing comma seperated list of |
-    |          |          | alphabets. By default it uses A-Z,a-z.                         | 
+    |          |          | alphabets. By default it uses A-Z,a-z.                         |
     +----------+----------+----------------------------------------------------------------+
 
     use strict; use warnings;
     use Crypt::Affine;
-    
+
     my $affine = Crypt::Affine->new(m => 5, r => 8);
 
 =head1 METHODS
@@ -81,12 +81,12 @@ Encrypts the given string of alphabets ignoring any non-alphabets.
 
     use strict; use warnings;
     use Crypt::Affine;
-    
+
     my ($affine, $original, $encrypted);
     $affine = Crypt::Affine->new(m => 5, r => 8);
     $original = 'affine cipher';
     $encrypted = $affine->encrypt($original);
-    
+
     print "Original : [$original]\n";
     print "Encrypted: [$encrypted]\n";
 
@@ -97,7 +97,7 @@ sub encrypt
     my $self = shift;
     my $data = shift;
     return unless defined $data;
-    
+
     $self->_prepare() unless defined $self->{_a};
     my $encrypt = '';
     foreach (split //,$data)
@@ -117,7 +117,7 @@ Decrypts the given string of alphabets ignoring any non-alphabets.
 
     use strict; use warnings;
     use Crypt::Affine;
-    
+
     my ($affine, $original, $encrypted, $decrypted);
     $affine = Crypt::Affine->new(m => 5, r => 8);
     $original = 'affine cipher';
@@ -135,7 +135,7 @@ sub decrypt
     my $self = shift;
     my $data = shift;
     return unless defined $data;
-    
+
     $self->_prepare() unless defined $self->{_a};
     my $decrypt = '';
     foreach (split //,$data)
@@ -155,24 +155,24 @@ sub _prepare
     my @data = ();
     my ($i, $j) = (1, 1);
     my ($a_, $z_, $l_, %_a, %_z, $_data);
-    
+
     if (defined($self->{'source'}) && (-e $self->{'source'}))
     {
         local undef $/;
-        open(IN, $self->{'source'}) 
+        open(IN, $self->{'source'})
             or croak("Unable to open [".$self->{'source'}."]: $!\n");
         $_data = <IN>;
         close(IN) && croak("ERROR: No data found in the [".$self->{'source'}."]\n")
             unless defined $_data;
-            
+
         chomp $_data;
         @data = split /\,/,$_data;
         close(IN);
     }
-    
+
     @data = ('a'..'z', 'A'..'Z') unless scalar(@data);
     $l_ = scalar(@data);
-    foreach (@data) 
+    foreach (@data)
     {
         $a_->{$_} = $i++;
         $z_->{$_} = ($l_ + 1) - $j++;
@@ -181,7 +181,7 @@ sub _prepare
 
     %_a = reverse %{$a_};
     %_z = reverse %{$z_};
-    
+
     $self->{'a_'} = $a_;
     $self->{'z_'} = $z_;
     $self->{'l_'} = $l_;
@@ -193,18 +193,18 @@ sub _encrypt
 {
     my $self = shift;
     my $char = shift;
-    
+
     my $i = (($self->{'m'} * $self->{'a_'}->{$char}) + $self->{'r'}) % $self->{'l_'};
     $i = $self->{'l_'} if ($i == 0);
 
     (defined($self->{'reverse'}) && ($self->{'reverse'}))
-    ? 
+    ?
     return $self->{'_z'}->{$i}
-    : 
+    :
     return $self->{'_a'}->{$i};
 }
 
-sub _decrypt 
+sub _decrypt
 {
     my $self = shift;
     my $char = shift;
@@ -213,9 +213,9 @@ sub _decrypt
     my $j = 0;
 
     (defined($self->{'reverse'}) && ($self->{'reverse'}))
-    ? 
-    ($i = $self->{'z_'}->{$char}) 
-    : 
+    ?
+    ($i = $self->{'z_'}->{$char})
+    :
     ($i = $self->{'a_'}->{$char});
 
     $j = (_multiplier($self->{'m'}, $self->{'l_'}) * ($i - $self->{'r'})) % $self->{'l_'};
@@ -231,11 +231,11 @@ sub _unsupported
     return 0;
 }
 
-sub _multiplier 
+sub _multiplier
 {
     my $a = shift;
     my $m = shift;
-    
+
     $m = abs($m);
     $a = $a % $m;
     my ($b, $x, $y, $n) = ($m, 1, 0);
@@ -255,7 +255,7 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 =head1 BUGS
 
 Please report any bugs / feature requests to C<bug-crypt-affine at rt.cpan.org> or through the
-web   interface   at   L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Crypt-Affine>.  I will 
+web   interface   at   L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Crypt-Affine>.  I will
 be notified & then you'll automatically be notified of progress on your bug as I make changes.
 
 =head1 SUPPORT

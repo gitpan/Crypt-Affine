@@ -1,7 +1,11 @@
 Revision history for Crypt-Affine
 
-0.02    Mon Aug 22 14:15:16 2011
-        - Minor changes to pod.
+0.03  Sat Oct 25 20:30:00 2014
+      - Removed Build.PL file.
+      - Tidied up MANIFEST file.
 
-0.01    Mon Aug 22 11:22:00 2011
-        - First version, released.
+0.02  Mon Aug 22 14:15:16 2011
+      - Minor changes to pod.
+
+0.01  Mon Aug 22 11:22:00 2011
+      - First version, released.

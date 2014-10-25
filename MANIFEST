@@ -1,4 +1,3 @@
-Build.PL
 Changes
 MANIFEST
 MANIFEST.SKIP
@@ -12,5 +11,5 @@ t/02-encrypt.t
 t/03-decrypt.t
 t/manifest.t
 t/pod.t
-META.yml
-SIGNATURE    Added here by Module::Build
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)

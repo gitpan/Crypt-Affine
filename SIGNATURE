@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.68.
+signed via the Module::Signature module, version 0.73.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,28 +14,26 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 42a56b4f3f3d6a7c56ccee0b733ef85185d7b972 Build.PL
-SHA1 7fca06c6a3fe69a6cbf73b86e1bb07ac9e08c297 Changes
-SHA1 b1ede25fb226e40454c448568d5ccc66af92206f MANIFEST
-SHA1 7d20e4e840781030202bb045d5ab81b3fd1b68b0 MANIFEST.SKIP
-SHA1 1ccc9647beafd2dcdc4e4c2974d2db098fffe196 META.yml
+SHA1 10c7130815aea425bdb58fbec6914c2b12d57868 Changes
+SHA1 5036ded8aaf21b5a00e9fa24b6d4deb2c0d750ce MANIFEST
+SHA1 5f29cdcbfacb9c46ac155fff9844aceeb064aef1 MANIFEST.SKIP
 SHA1 21033c71b543c1c2448faa59e31ae379bbb5a76e Makefile.PL
 SHA1 85b47a46be8d531afd1443fd4c073cc6fb5526df README
-SHA1 a85fd7a87391a673e46f16430d13e68f9b575467 lib/Crypt/Affine.pm
+SHA1 8f454028d2bbe7ad9aad9d427835b346e37c5c20 lib/Crypt/Affine.pm
 SHA1 56f9b7e2e01d69f46ae4aedc79c84571797f5aa1 t/00-load.t
 SHA1 e10f975b331df6356772f0eab76e6a8ea2c1d6dc t/01-new.t
-SHA1 652dca62470c3abf4751e8718e39e6340ddc70c0 t/02-encrypt.t
-SHA1 13da45433073765290b6b6997a4c71f0c018912b t/03-decrypt.t
+SHA1 a3b18bb8ac7ae50159db85fe01937476e32f8ab1 t/02-encrypt.t
+SHA1 074a3baf1509455dfac3b66f65418bce2c8d3db8 t/03-decrypt.t
 SHA1 2b8ffb7e4f399af95d092743846ac8d438f2c53e t/manifest.t
 SHA1 73982a48f6781d3bc281a3168624f4301acf59b2 t/pod.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v2.0.14 (MingW32)
+Version: GnuPG v1
 
-iQEcBAEBAgAGBQJOUlgVAAoJEPYcXBXhRYOhrUMH/1Bp7E6ohSVda9OA83bVxsVg
-9lNqXyTTlmuV/sDwhv9UH+odYnjOYklfIl4ZusZqKMKsqH6Krc0z10tRAXG9pEWM
-zrHvdjGtTfux9lPPb06a/vuzyUCkkdMP9xX42LKzgEoVEXgH3V2iyRTO1UWhQ3/9
-1bRFdfReOWHIjXJiKLbzgGQ0volKgaty1uf5dpE5Lumb7kCbcrA205hbi3LL4XA7
-dhOVNC5fOMZ41g9Vu2PG0YAkEyVonpGV6IVImbSRNR3QTa0DV4ypav1Gg8bQ+MbG
-bM6qK/GEcd2g1zKstIQSSa/x7zvwNeT2E57ZxvJy2SyIG8FN2/0J0GPrOsPxXEY=
-=X99C
+iQEcBAEBAgAGBQJUS/tqAAoJENoXJXWo7C/pmPgH/iiefgRZjKRHyNHX1c104wFL
+fGioutJeYq/MwbJoMGDMJc3GuwPyPjh/dUicL5X9neIhPaHisZrA5/RR/ziw2UCu
+Ld/1DI3/vRS1vw4meKyKBN1/BWqwhh/GDGhiFimjZZIuqD0qDcTup8r3r8n3hxn8
+u1hL4koXs2PpoiuZexNUvDLnM7hwOe0VfPIlyEQbz6QkD/AE4wCZOpciUAjwu0CZ
+o9yKuJa7PzzHxuYYAd7dV/6glgm+z2J17MYnqunZA1XNuEsQGt3gHrEgwFZUU6N8
+4VBDyzfhGcwYouVq7WcipFqg9dk00qhk/2yoFuFgmF/rKFyF3ooYjUGSUJ0O2S4=
+=S7mr
 -----END PGP SIGNATURE-----
