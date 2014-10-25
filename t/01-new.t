@@ -5,40 +5,40 @@ use Crypt::Affine;
 use Test::More tests => 13;
 
 eval { Crypt::Affine->new(); };
-like($@, qr/Attribute \(m\) is required/);
+like($@, qr/Missing required arguments: m, r/);
 
-eval { Crypt::Affine->new(r => 1); };
-like($@, qr/Attribute \(m\) is required/);
+eval { Crypt::Affine->new('r' => 1); };
+like($@, qr/Missing required arguments: m/);
 
-eval { Crypt::Affine->new(m => 1); };
-like($@, qr/Attribute \(r\) is required/);
+eval { Crypt::Affine->new('m' => 1); };
+like($@, qr/Missing required arguments: r/);
 
-eval { Crypt::Affine->new(r => -1, m => 1); };
-like($@, qr/Attribute \(r\) does not pass/);
+eval { Crypt::Affine->new('r' => -1, 'm' => 1); };
+like($@, qr/isa check for "r" failed/);
 
-eval { Crypt::Affine->new(m => -1, r => 1); };
-like($@, qr/Attribute \(m\) does not pass/);
+eval { Crypt::Affine->new('m' => -1, 'r' => 1); };
+like($@, qr/isa check for "m" failed/);
 
-eval { Crypt::Affine->new(m => 1, r => 1, reverse => -1); };
-like($@, qr/Attribute \(reverse\) does not pass/);
+eval { Crypt::Affine->new('m' => 1, 'r' => 1, 'reverse' => -1); };
+like($@, qr/isa check for "reverse" failed/);
 
-eval { Crypt::Affine->new(m => 1, r => 1, source => 'source.txt'); };
-like($@, qr/Attribute \(source\) does not pass/);
+eval { Crypt::Affine->new('m' => 1, 'r' => 1, 'source' => 'source.txt'); };
+like($@, qr/isa check for "source" failed/);
 
-eval { Crypt::Affine->new({r => 1}); };
-like($@, qr/Attribute \(m\) is required/);
+eval { Crypt::Affine->new({ 'r' => 1 }); };
+like($@, qr/Missing required arguments: m/);
 
-eval { Crypt::Affine->new({m => 1}); };
-like($@, qr/Attribute \(r\) is required/);
+eval { Crypt::Affine->new({'m' => 1}); };
+like($@, qr/Missing required arguments: r/);
 
-eval { Crypt::Affine->new({r => -1, m => 1}); };
-like($@, qr/Attribute \(r\) does not pass/);
+eval { Crypt::Affine->new({ 'r' => -1, 'm' => 1 }); };
+like($@, qr/isa check for "r" failed/);
 
-eval { Crypt::Affine->new({m => -1, r => 1}); };
-like($@, qr/Attribute \(m\) does not pass/);
+eval { Crypt::Affine->new({ 'm' => -1, 'r' => 1 }); };
+like($@, qr/isa check for "m" failed/);
 
-eval { Crypt::Affine->new({m => 1, r => 1, reverse => -1}); };
-like($@, qr/Attribute \(reverse\) does not pass/);
+eval { Crypt::Affine->new({ 'm' => 1, 'r' => 1, 'reverse' => -1 }); };
+like($@, qr/isa check for "reverse" failed/);
 
-eval { Crypt::Affine->new({m => 1, r => 1, source => 'source.txt'}); };
-like($@, qr/Attribute \(source\) does not pass/);
+eval { Crypt::Affine->new({ 'm' => 1, 'r' => 1, 'source' => 'source.txt' }); };
+like($@, qr/isa check for "source" failed/);

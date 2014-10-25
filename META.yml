@@ -2,13 +2,10 @@
 abstract: 'Interface to the Affine cipher.'
 author:
   - 'Mohammad S Anwar <mohammad.anwar@yahoo.com>'
-build_requires:
-  ExtUtils::MakeMaker: '0'
-configure_requires:
-  ExtUtils::MakeMaker: '0'
+build_requires: {}
 dynamic_config: 1
 generated_by: 'ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.141520'
-license: perl
+license: artistic_2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: '1.4'
@@ -17,7 +14,6 @@ no_index:
   directory:
     - t
     - inc
-requires:
-  Mouse: '0.93'
-  Test::More: '0'
-version: '0.03'
+resources:
+  repository: https://github.com/Manwar/Crypt-Affine.git
+version: '0.04'

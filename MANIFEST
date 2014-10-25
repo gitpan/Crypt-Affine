@@ -5,6 +5,7 @@ SIGNATURE
 Makefile.PL
 README
 lib/Crypt/Affine.pm
+lib/Crypt/Affine/Params.pm
 t/00-load.t
 t/01-new.t
 t/02-encrypt.t

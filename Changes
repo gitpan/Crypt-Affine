@@ -1,5 +1,9 @@
 Revision history for Crypt-Affine
 
+0.04  Sat Oct 25 21:50:25 2014
+      - Restructured code using 'Moo'.
+      - Added section 'Repository' to the pod document.
+
 0.03  Sat Oct 25 20:30:00 2014
       - Removed Build.PL file.
       - Tidied up MANIFEST file.
