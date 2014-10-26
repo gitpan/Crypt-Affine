@@ -1,6 +1,6 @@
 package Crypt::Affine::Params;
 
-$Crypt::Affile::Params::VERSION = '0.05';
+$Crypt::Affile::Params::VERSION = '0.06';
 
 =head1 NAME
 
@@ -8,7 +8,7 @@ Crypt::Affine::Params - Placeholder for parameters for Crypt::Affine.
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =cut
 

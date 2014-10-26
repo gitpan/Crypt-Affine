@@ -1,5 +1,8 @@
 Revision history for Crypt-Affine
 
+0.06  2014-10-26T18:28:00+01:00
+      - Rebuild the distribution using ExtUtils::MakeMaker v7.00 so that META files created with dependencies.
+
 0.05  2014-10-25T23:55:25+01:00
       - Updated Changes file according to CPAN::Changes::Spec package.
       - Added unit test changes.t file.
